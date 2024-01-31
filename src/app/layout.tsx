@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="text-white">
       <body className={jomhuria.className}>{children}</body>
     </html>
   );
