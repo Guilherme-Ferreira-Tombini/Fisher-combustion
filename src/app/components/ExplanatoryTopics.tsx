@@ -1,9 +1,21 @@
 export default function ExplanatoryTopics(){
     return(
-        <div className="w-[100%] h-[550px] grid grid-cols-3 p-3">
-            <div className=" bg-black"></div>
-            <div className=" bg-white"></div>
-            <div className=" bg-slate-600"></div>
+        <div id="information" className="w-[90%] h-[550px] grid grid-cols-3 mt-3">
+            <div className="flex flex-col justify-center p-4 items-center">
+                <div className="bg-[#C35A40] rounded-3xl p-4 w-full h-full">
+
+                </div>
+            </div>
+            <div className="flex flex-col justify-center p-4 items-center">
+                <div className="bg-[#C35A40] rounded-3xl p-4 w-full h-full">
+
+                </div>
+            </div>
+            <div className="flex flex-col justify-center p-4 items-center">
+                <div className="bg-[#C35A40] rounded-3xl p-4 w-full h-full">
+
+                </div>
+            </div>
 
         </div>
     )
