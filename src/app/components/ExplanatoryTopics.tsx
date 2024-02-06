@@ -11,7 +11,7 @@ export default function ExplanatoryTopics(){
               text={"Com os resultados dos calculos e valores pode-se fazer relatórios.\n\nPodendo ter a opção de gerar um PDF do relatório gerado. Podendo ter a opção de gerar um PDF do relatório gerado."}/>
             <Topics 
               image={"/img/posto-de-gasolina 1.png"} 
-              text={"Neste site calculamos o consumo:"}/>
+              text={"Neste site calculamos o consumo:\n\n• Quantas vezes será abastecido o automovel para sua viagem;\n• Gasto total para encher o tanque.\n• Total de quilometros que pode percorrer com o tanque cheio."}/>
         </div>
     )
 }
