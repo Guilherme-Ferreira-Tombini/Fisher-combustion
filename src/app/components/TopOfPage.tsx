@@ -20,8 +20,8 @@ export default function TopOfPage() {
       <div className="w-full h-full flex justify-center items-center p-5">
         <Image 
           src={FamilyCar} 
-          width={470} 
-          height={470} 
+          width={442} 
+          height={442} 
           quality={100}
           alt={"FamilyCar"}/>
 
