@@ -22,7 +22,7 @@ export default function Topics({image, text} : TopicsProps) {
                 alt={"Image"} 
                 width={90} height={90}/>
 
-               <h5 className="text-center text-[31px] p-6">
+               <h5 className="text-center text-[30px] p-5">
                   {paragraph}
                </h5>
            </div>
