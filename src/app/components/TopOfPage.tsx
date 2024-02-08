@@ -5,7 +5,7 @@ export default function TopOfPage() {
   return (
     <div className="grid grid-cols-2">      
       <div className="w-full h-full p-1 flex flex-col justify-center items-center">
-        <div className="grid-rows-1 w-[89%]">
+        <div className="grid-rows-1 justify-items-center w-[90%] ml-9">
           <h1 className=" text-[86.4px] text-justify leading-none w-[100%] mb-8">
               Duvidas sobre os gastos de consumo do seu veiculo?
           </h1>
