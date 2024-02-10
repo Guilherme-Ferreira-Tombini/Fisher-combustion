@@ -1,3 +1,4 @@
+import Calculate from "./components/Calculate";
 import ExplanatoryTopics from "./components/ExplanatoryTopics";
 import Header from "./components/Header";
 import TopOfPage from "./components/TopOfPage";
@@ -8,6 +9,7 @@ export default function Home() {
       <Header/>
       <TopOfPage/>
       <ExplanatoryTopics/>
+      <Calculate/>
     </div>
   );
 }
