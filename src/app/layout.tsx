@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Jomhuria } from "next/font/google";
+import { Jomhuria, Abel } from "next/font/google";
 import "./globals.css";
 
 const jomhuria = Jomhuria({
   subsets: ["latin"],
   weight: "400"
 });
+
+const abel = Abel({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-abel"
+})
 
 export const metadata: Metadata = {
   title: "FisherCombustion",
@@ -19,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="text-white">
-      <body className={jomhuria.className}>{children}</body>
+      <body className={`${jomhuria.className} ${abel.variable}`}>{children}</body>
     </html>
   );
 }
