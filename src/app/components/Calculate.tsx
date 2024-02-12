@@ -9,11 +9,11 @@ export default function Calculate(){
             <SymbolForCalculations/>
             <div className="w-[70%] p-5 mt-3 font-abel">
                <input 
-                 className="rounded-lg w-full text-center text-2xl placeholder-[#4C4C4C] text-black p-1" 
+                 className="rounded-lg w-full text-center text-xl placeholder-[#4C4C4C] text-black p-1" 
                  type="text" id="QuilometroPorLitro" 
                  placeholder="Quantos KM seu veiculo anda com 1 litro de combustivel?"/>
                  <input 
-                 className="rounded-lg w-full text-center text-2xl placeholder-[#4C4C4C] text-black p-1 mt-5" 
+                 className="rounded-lg w-full text-center text-xl placeholder-[#4C4C4C] text-black p-1 mt-5" 
                  type="text" id="TanqueTotal" 
                  placeholder="Quantos litros o tanque de combustivel suporta de combustivel?"/>
             </div>
