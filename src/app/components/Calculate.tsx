@@ -4,7 +4,7 @@ export default function Calculate(){
     return(
         <div className="grid grid-cols-1 justify-items-center mt-10 bg-[#C35A40] w-[83%] p-6 rounded-2xl">
             <h1 className="flex flex-col justify-center items-center leading-none text-[113px]">
-                Calculos
+                CALCULOS
             </h1>
             <SymbolForCalculations/>
             <div className="w-[70%] p-5 mt-2 font-abel">
