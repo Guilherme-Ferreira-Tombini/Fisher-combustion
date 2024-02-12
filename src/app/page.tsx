@@ -1,4 +1,5 @@
 import Calculate from "./components/Calculate";
+import DataReport from "./components/DataReport";
 import ExplanatoryTopics from "./components/ExplanatoryTopics";
 import Header from "./components/Header";
 import TopOfPage from "./components/TopOfPage";
@@ -10,6 +11,7 @@ export default function Home() {
       <TopOfPage/>
       <ExplanatoryTopics/>
       <Calculate/>
+      <DataReport/>
     </div>
   );
 }
