@@ -7,7 +7,7 @@ export default function Calculate(){
                 Calculos
             </h1>
             <SymbolForCalculations/>
-            <div className="w-[70%] p-5 mt-3 font-abel">
+            <div className="w-[70%] p-5 mt-2 font-abel">
                <input 
                  className="rounded-lg w-full text-center text-xl placeholder-[#4C4C4C] text-black p-1" 
                  type="text" id="QuilometroPorLitro" 
