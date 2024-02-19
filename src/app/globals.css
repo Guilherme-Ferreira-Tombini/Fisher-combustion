@@ -6,3 +6,28 @@
     transform: scale(1.1);
     transition: all 0.5s;
 }
+
+.custom-title{
+    font-size: 60px;
+    padding: 0;
+    font-weight: normal;
+}
+
+.custom-title-toast{
+    font-weight: normal;
+}
+
+.custom-popup-toast{
+    font-size: 22px;
+    padding: 0;
+    font-weight: normal;
+}
+
+.custom-popup{
+    font-size: 23px;
+    width: 500px;
+}
+
+.custom-icon{
+    font-size: 12px;
+}

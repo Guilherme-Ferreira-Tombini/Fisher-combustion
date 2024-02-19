@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import SymbolForCalculations from "./SymbolForCalculations"
+import Swal from "sweetalert2";
 
 export default function Calculate(){
     const [quilometroPorLitro, setQuilometroPorLitro] = useState("");
@@ -11,16 +12,50 @@ export default function Calculate(){
         let campTTValue = parseFloat(tanqueTotal);
 
         if (isNaN(campKMLValue) || isNaN(campTTValue)) {
-            alert("Por favor, insira valores numéricos válidos para ambos os campos.");
+            Swal.fire({
+                title: 'Campos em branco!!',
+                customClass: {
+                    title: 'custom-title',
+                    popup: 'custom-popup',
+                    icon: 'custom-icon',
+                },
+                background: '#b1533c',
+                color: 'white',
+                text: 'Insira os dados nos campos, identificamos que eles estão vazios.',
+                icon: 'warning',
+                confirmButtonText: 'Ok',
+                
+            });
             return;
         }
-
-        console.log(quilometroPorLitro, tanqueTotal);
     }
 
     function clear(){
        setQuilometroPorLitro("");
        setTanqueTotal("");
+
+       const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: 'success',
+        background: '#b1533c',
+        customClass:{
+            popup: 'custom-popup-toast',
+            title: 'custom-title-toast'
+        },
+        color: 'white',
+        title: 'Campos limpos com sucesso'
+      });
+      return;
     }
 
     return(
