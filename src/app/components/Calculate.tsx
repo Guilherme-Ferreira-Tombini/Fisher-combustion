@@ -92,7 +92,7 @@ export default function Calculate(){
                  placeholder="Quantos litros o tanque de combustivel suporta de combustivel?"
                  onChange={(e) => setTanqueTotal(e.target.value)}/>
                <select 
-                 className="rounded-lg text-center text-xl placeholder-[#4C4C4C] text-black p-3 mt-5" 
+                 className="rounded-lg text-center text-xl p-2 mt-5 text-[#4C4C4C]" 
                  name="combustion" 
                  id="combustion"
                  value={combustivel} 
