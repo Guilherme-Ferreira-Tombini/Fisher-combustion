@@ -6,26 +6,41 @@ import Swal from "sweetalert2";
 export default function Calculate(){
     const [quilometroPorLitro, setQuilometroPorLitro] = useState("");
     const [tanqueTotal, setTanqueTotal] = useState("");
+    const [combustivel, setCombustivel] = useState("");
+    const arrayCombustion: string[] = ["gasolina", "diesel", "etanol"];
 
     function calculate() {
         let campKMLValue = parseFloat(quilometroPorLitro);
         let campTTValue = parseFloat(tanqueTotal);
+        let campTCValue = combustivel;
+        
 
-        if (isNaN(campKMLValue) || isNaN(campTTValue)) {
-            Swal.fire({
-                title: 'Campos em branco!!',
-                customClass: {
-                    title: 'custom-title',
-                    popup: 'custom-popup',
-                    icon: 'custom-icon',
-                },
-                background: '#b1533c',
-                color: 'white',
-                text: 'Insira os dados nos campos, identificamos que eles estão vazios.',
-                icon: 'warning',
-                confirmButtonText: 'Ok',
-                
-            });
+        if (!arrayCombustion.includes(campTCValue)) {
+          campTCValue = "null";
+        }
+
+        if (isNaN(campKMLValue) || isNaN(campTTValue) ||  campTCValue == "null") {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: 'warning',
+            background: '#b1533c',
+            customClass:{
+                popup: 'custom-popup-toast',
+                title: 'custom-title-toast'
+            },
+            color: 'white',
+            title: 'Ensira os dados nos campos'
+          });
             return;
         }
     }
@@ -33,7 +48,8 @@ export default function Calculate(){
     function clear(){
        setQuilometroPorLitro("");
        setTanqueTotal("");
-
+       setCombustivel("");
+       
        const Toast = Swal.mixin({
         toast: true,
         position: "top-end",
@@ -64,7 +80,7 @@ export default function Calculate(){
                 CALCULOS
             </h1>
             <SymbolForCalculations/>
-            <div className="w-[70%] p-5 mt-2 font-abel">
+            <div className="w-[70%] p-5 mt-2 font-abel grid grid-cols-1 justify-items-center">
                <input 
                  className="rounded-lg w-full text-center text-xl placeholder-[#4C4C4C] text-black p-1" 
                  type="text" value={quilometroPorLitro}
@@ -75,6 +91,17 @@ export default function Calculate(){
                  type="text" value={tanqueTotal} 
                  placeholder="Quantos litros o tanque de combustivel suporta de combustivel?"
                  onChange={(e) => setTanqueTotal(e.target.value)}/>
+               <select 
+                 className="rounded-lg text-center text-xl placeholder-[#4C4C4C] text-black p-3 mt-5" 
+                 name="combustion" 
+                 id="combustion"
+                 value={combustivel} 
+                 onChange={(e) => setCombustivel(e.target.value)}>
+                  <option value="i" selected hidden>Tipo de combustivel: </option>
+                  <option value="gasolina">Gasolina</option>
+                  <option value="etanol">Etanol</option>
+                  <option value="diesel">Diesel</option>
+               </select>
             </div>
             <div className="w-[250px] flex flex-row justify-between items-center mt-4 font-abel">
                 <input
