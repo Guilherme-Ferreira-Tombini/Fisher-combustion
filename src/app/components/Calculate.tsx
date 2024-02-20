@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import SymbolForCalculations from "./SymbolForCalculations"
 import Swal from "sweetalert2";
+import DataReport from "./DataReport";
 
 export default function Calculate(){
     const [quilometroPorLitro, setQuilometroPorLitro] = useState("");
@@ -14,6 +15,7 @@ export default function Calculate(){
         let campTTValue = parseFloat(tanqueTotal);
         let campTCValue = combustivel;
         
+
 
         if (!arrayCombustion.includes(campTCValue)) {
           campTCValue = "null";
@@ -43,7 +45,10 @@ export default function Calculate(){
           });
             return;
         }
+
+        <DataReport KMLValue={campKMLValue} TTValue={campTTValue} TCValue={campTCValue}/>
     }
+
 
     function clear(){
        setQuilometroPorLitro("");
