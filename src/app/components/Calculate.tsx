@@ -86,18 +86,20 @@ export default function Calculate(){
                  type="text" value={quilometroPorLitro}
                  placeholder="Quantos KM seu veiculo anda com 1 litro de combustivel?"
                  onChange={(e) => setQuilometroPorLitro(e.target.value)}/>
+
                <input 
                  className="rounded-lg w-full text-center text-xl placeholder-[#4C4C4C] text-black p-1 mt-5" 
                  type="text" value={tanqueTotal} 
                  placeholder="Quantos litros o tanque de combustivel suporta de combustivel?"
                  onChange={(e) => setTanqueTotal(e.target.value)}/>
+
                <select 
                  className="rounded-lg text-center text-xl p-2 mt-5 text-[#4C4C4C]" 
                  name="combustion" 
                  id="combustion"
                  value={combustivel} 
                  onChange={(e) => setCombustivel(e.target.value)}>
-                  <option value="i" selected hidden>Tipo de combustivel: </option>
+                  <option value="">Tipo de combustivel:</option>
                   <option value="gasolina">Gasolina</option>
                   <option value="etanol">Etanol</option>
                   <option value="diesel">Diesel</option>
@@ -110,6 +112,7 @@ export default function Calculate(){
                   type="button" 
                   value="Calcular" 
                   onClick={calculate}/>
+
                 <input
                   className="bg-[#920707] rounded-lg pr-3 pl-3 pt-3 pb-2  w-[110px] text-2xl" 
                   id="hoverButton"
