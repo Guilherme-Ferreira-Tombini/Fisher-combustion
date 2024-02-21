@@ -14,9 +14,7 @@ export default function Calculate(){
         let campKMLValue = parseFloat(quilometroPorLitro);
         let campTTValue = parseFloat(tanqueTotal);
         let campTCValue = combustivel;
-        
-
-
+      
         if (!arrayCombustion.includes(campTCValue)) {
           campTCValue = "null";
         }
