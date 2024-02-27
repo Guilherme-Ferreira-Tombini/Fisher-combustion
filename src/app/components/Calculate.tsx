@@ -8,18 +8,13 @@ export default function Calculate(){
     const [quilometroPorLitro, setQuilometroPorLitro] = useState("");
     const [tanqueTotal, setTanqueTotal] = useState("");
     const [combustivel, setCombustivel] = useState("");
-    const arrayCombustion: string[] = ["gasolina", "diesel", "etanol"];
 
     function calculate() {
         let campKMLValue = parseFloat(quilometroPorLitro);
         let campTTValue = parseFloat(tanqueTotal);
-        let campTCValue = combustivel;
-      
-        if (!arrayCombustion.includes(campTCValue)) {
-          campTCValue = "null";
-        }
+        let campTCValue = parseFloat(combustivel);
 
-        if (isNaN(campKMLValue) || isNaN(campTTValue) ||  campTCValue == "null") {
+        if (isNaN(campKMLValue) || isNaN(campTTValue) ||  isNaN(campTCValue)) {
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -96,17 +91,12 @@ export default function Calculate(){
                  placeholder="Quantos litros o tanque de combustivel suporta de combustivel?"
                  onChange={(e) => setTanqueTotal(e.target.value)}/>
 
-               <select 
-                 className="rounded-lg text-center text-xl p-2 mt-5 text-[#4C4C4C]" 
-                 name="combustion" 
-                 id="combustion"
-                 value={combustivel} 
-                 onChange={(e) => setCombustivel(e.target.value)}>
-                  <option value="">Tipo de combustivel:</option>
-                  <option value="gasolina">Gasolina</option>
-                  <option value="etanol">Etanol</option>
-                  <option value="diesel">Diesel</option>
-               </select>
+               <input 
+                 className="rounded-lg w-full text-center text-xl placeholder-[#4C4C4C] text-black p-1 mt-5" 
+                 type="text" value={combustivel} 
+                 placeholder="Insira o preço do combusivel"
+                 onChange={(e) => setCombustivel(e.target.value)}/>
+
             </div>
             <div className="w-[250px] flex flex-row justify-between items-center mt-4 font-abel">
                 <input
