@@ -39,7 +39,9 @@ export default function Calculate(){
             return;
         }
 
-        <DataReport KMLValue={campKMLValue} TTValue={campTTValue} TCValue={campTCValue}/>
+          let resultado = campTTValue * campKMLValue;
+
+        <DataReport KMLValue={resultado} TTValue={campTTValue} TCValue={campTCValue}/>
     }
 
 

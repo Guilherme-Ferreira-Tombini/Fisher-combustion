@@ -11,7 +11,7 @@ export default function DataReport(props:any){
                         Com o tanque cheio o carro percorre:
                     </span>
                     <span>
-                        {}
+                        {props.KMLValue} KM
                     </span>
 
                 </div>
