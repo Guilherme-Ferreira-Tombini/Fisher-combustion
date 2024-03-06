@@ -11,7 +11,6 @@ export default function Home() {
       <TopOfPage/>
       <ExplanatoryTopics/>
       <Calculate/>
-      <DataReport/>
     </div>
   );
 }
