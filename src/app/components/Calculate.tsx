@@ -38,8 +38,32 @@ export default function Calculate(){
             title: 'Ensira os dados nos campos'
           });
             return;
+        }else{
+          setKM_percorre(campTTValue * campKMLValue);
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: 'success',
+            background: '#b1533c',
+            customClass:{
+                popup: 'custom-popup-toast',
+                title: 'custom-title-toast'
+            },
+            color: 'white',
+            title: 'Relatorio Gerado com sucesso!!'
+          });
+            return;
         }
-        setKM_percorre(campTTValue * campKMLValue);
     }
 
 
