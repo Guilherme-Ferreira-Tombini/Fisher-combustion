@@ -11,14 +11,14 @@ export default function DataReport(props:any){
                         Com o tanque cheio o carro percorre:
                     </span>
                     <span className="text-[45px] mt-[-20px] text-normal">
-                        {" "+props.KMLValue} KM
+                        {" " + props.KMLValue} KM
                     </span>
 
                     <span className="text-justify text-[45px] text-bold">
-
+                        Gasto para encher o tanque do seu carro:
                     </span>
                     <span className="text-[45px] mt-[-20px] text-normal">
-                        
+                        {"R$ " + props.Gasto_tanque}
                     </span>
 
                 </div>

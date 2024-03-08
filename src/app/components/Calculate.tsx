@@ -8,7 +8,8 @@ export default function Calculate(){
     const [quilometroPorLitro, setQuilometroPorLitro] = useState("");
     const [tanqueTotal, setTanqueTotal] = useState("");
     const [combustivel, setCombustivel] = useState("");
-    const [KM_percorre, setKM_percorre] = useState<number>(0);
+    const [KM_percorre, setKM_percorre] = useState<number>(0.0);
+    const [gasto_tanque_total, setGasto_tanque_total] = useState<number>(0.0);
 
     function calculate() {
         let campKMLValue = parseFloat(quilometroPorLitro);
@@ -40,6 +41,7 @@ export default function Calculate(){
             return;
         }else{
           setKM_percorre(campTTValue * campKMLValue);
+          setGasto_tanque_total(campTCValue * campTTValue);
 
           const Toast = Swal.mixin({
             toast: true,
@@ -72,6 +74,7 @@ export default function Calculate(){
        setTanqueTotal("");
        setCombustivel("");
        setKM_percorre(0);
+       setGasto_tanque_total(0);
        
        const Toast = Swal.mixin({
         toast: true,
@@ -140,7 +143,7 @@ export default function Calculate(){
                   onClick={clear}/>
             </div>
         </div>
-        <DataReport KMLValue={KM_percorre}/>
+        <DataReport KMLValue={KM_percorre} Gasto_tanque={gasto_tanque_total}/>
     </>
     );
 }
