@@ -6,18 +6,18 @@ export default function DataReport(props:any){
                 RELATÓRIO
             </h1>
             <div className="w-[90%] grid grid-cols-2">
-                <div className="flex flex-col justify-items-start">
-                    <span className="text-justify text-[45px] text-bold">
+                <div className="flex flex-col justify-items-start text-[40px]">
+                    <span className="text-justify text-bold">
                         Com o tanque cheio o carro percorre:
                     </span>
-                    <span className="text-[45px] mt-[-20px] text-normal">
+                    <span className="mt-[-20px] text-normal">
                         {" " + props.KMLValue} KM
                     </span>
 
-                    <span className="text-justify text-[45px] text-bold">
+                    <span className="text-justify text-bold">
                         Gasto para encher o tanque do seu carro:
                     </span>
-                    <span className="text-[45px] mt-[-20px] text-normal">
+                    <span className="mt-[-20px] text-normal">
                         {"R$ " + props.Gasto_tanque}
                     </span>
 
