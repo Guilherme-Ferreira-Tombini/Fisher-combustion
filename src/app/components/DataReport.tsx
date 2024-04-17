@@ -14,6 +14,13 @@ export default function DataReport(props:any){
                         {" " + props.KMLValue} KM
                     </span>
 
+                    <span className="text-justify leading-none text-bold">
+                        Em uma viagem de 1000km, seu carro vai abastecer: 
+                    </span>
+                    <span className="mt-[-20px] text-normal">
+                        {" " + props.VezesAbastecido} vezes
+                    </span>
+
                     <span className="text-justify text-bold">
                         Gasto para encher o tanque do seu carro:
                     </span>

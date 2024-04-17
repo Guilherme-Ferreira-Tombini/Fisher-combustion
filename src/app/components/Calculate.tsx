@@ -10,6 +10,7 @@ export default function Calculate(){
     const [combustivel, setCombustivel] = useState("");
     const [KM_percorre, setKM_percorre] = useState<number>(0.0);
     const [gasto_tanque_total, setGasto_tanque_total] = useState<number>(0.0);
+    const [vezes_abastecido, setVezes_abastecido] = useState<number>(0);
 
     function calculate() {
         let campKMLValue = parseFloat(quilometroPorLitro);
@@ -42,6 +43,10 @@ export default function Calculate(){
         }else{
           setKM_percorre(campTTValue * campKMLValue);
           setGasto_tanque_total(campTCValue * campTTValue);
+
+          let conta = 1000 / campKMLValue;
+          let vezesAbastecido = conta/campTTValue;
+          setVezes_abastecido(Math.ceil(vezesAbastecido));
 
           const Toast = Swal.mixin({
             toast: true,
@@ -143,7 +148,7 @@ export default function Calculate(){
                   onClick={clear}/>
             </div>
         </div>
-        <DataReport KMLValue={KM_percorre} Gasto_tanque={gasto_tanque_total}/>
+        <DataReport KMLValue={KM_percorre} VezesAbastecido={vezes_abastecido} Gasto_tanque={gasto_tanque_total}/>
     </>
     );
 }
