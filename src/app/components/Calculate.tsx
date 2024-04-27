@@ -41,8 +41,9 @@ export default function Calculate(){
           });
             return;
         }else{
-          setKM_percorre(campTTValue * campKMLValue);
-          setGasto_tanque_total(campTCValue * campTTValue);
+          setKM_percorre(Math.round(campTTValue * campKMLValue));
+          let gasto = campTCValue * campTTValue;
+          setGasto_tanque_total(Math.floor(gasto));
 
           let conta = 1000 / campKMLValue;
           let vezesAbastecido = conta/campTTValue;
@@ -78,6 +79,7 @@ export default function Calculate(){
        setQuilometroPorLitro("");
        setTanqueTotal("");
        setCombustivel("");
+       setVezes_abastecido(0);
        setKM_percorre(0);
        setGasto_tanque_total(0);
        
