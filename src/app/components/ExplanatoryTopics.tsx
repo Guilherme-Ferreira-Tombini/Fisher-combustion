@@ -2,7 +2,7 @@ import Topics from "./Topics";
 
 export default function ExplanatoryTopics(){
     return(
-        <div className="w-[90%] grid grid-cols-3 mt-5">
+        <div className="w-[90%] grid grid-cols-3 mt-5 mobile:grid-cols-1 mobile:gap-1">
             <Topics 
               image={"/img/cronometro 1.png"} 
               text={"Os calculos de consumo dos automoveis, muitas vezes, precisam do tempo que o carro percorreu.\n\nPorém, no caso do site, só é necessário saber quantos quilometros com 1 litro de combustivel seu veiculo realiza, o total de litros que ele suporta e o preço do combustivel utilizado."}/>

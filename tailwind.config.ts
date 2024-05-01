@@ -11,6 +11,9 @@ const config: Config = {
       fontFamily: {
         abel: ['var(--font-abel)'],
       },
+      screens:{
+        'mobile': {'max': '767px'},
+      },
     },
   },
   plugins: [],
