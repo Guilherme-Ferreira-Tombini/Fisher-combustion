@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Karantina, K2D } from "next/font/google";
+import { Karantina, K2D, Abel } from "next/font/google";
 import "./globals.css";
 
 const karantina = Karantina({
@@ -11,6 +11,12 @@ const k2d = K2D({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-K2D"
+})
+
+const abel = Abel({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-abel"
 })
 
 export const metadata: Metadata = {
@@ -25,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="text-white">
-      <body className={`${karantina.className} ${k2d.variable}`}>{children}</body>
+      <body className={`${karantina.className} ${k2d.variable} ${abel.variable}`}>{children}</body>
     </html>
   );
 }

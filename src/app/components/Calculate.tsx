@@ -143,14 +143,14 @@ export default function Calculate(){
             </div>
             <div className="w-[250px] flex flex-row justify-between items-center mt-4 font-abel">
                 <input
-                  className="bg-[#8F4330] rounded-lg pr-3 pl-3 pt-3 pb-2  w-[110px] text-2xl" 
+                  className="bg-[#8F4330] rounded-lg pr-3 pl-3 pt-3 pb-2  w-[110px] text-xl" 
                   id="hoverButton"
                   type="button" 
                   value="Calcular" 
                   onClick={calculate}/>
 
                 <input
-                  className="bg-[#920707] rounded-lg pr-3 pl-3 pt-3 pb-2  w-[110px] text-2xl" 
+                  className="bg-[#920707] rounded-lg pr-3 pl-3 pt-3 pb-2  w-[110px] text-xl" 
                   id="hoverButton"
                   type="button"
                   value="Limpar" 

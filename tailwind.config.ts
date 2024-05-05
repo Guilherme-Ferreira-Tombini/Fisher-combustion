@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         k2d: ["var(--font-K2D)"],
+        abel: ["var(--font-abel)"],
       },
       screens:{
         'mobile': {'max': '767px'},
