@@ -14,7 +14,7 @@ export default function Topics({image, text} : TopicsProps) {
         </React.Fragment>
     ));
     return (
-        <div className="flex flex-col justify-center p-4 items-center mobile:p-4 ">
+        <div className="flex flex-col justify-center p-4 items-center">
            <div className="bg-[#C35A40] rounded-3xl p-4 w-full h-full grid grid-cols-1 justify-items-center">
               <Image 
                 className="mt-5"
@@ -22,7 +22,7 @@ export default function Topics({image, text} : TopicsProps) {
                 alt={"Image"} 
                 width={90} height={90}/>
 
-               <h5 className="text-center font-k2d text-[19px] m-5 mobile:text-[20px] mobile:p-3">
+               <h5 className="text-center font-k2d text-[19px] m-5 mobile:text-[17px] ">
                   {paragraph}
                </h5>
            </div>

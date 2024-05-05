@@ -111,7 +111,7 @@ export default function Calculate(){
     return(
       <>
         <div className="grid grid-cols-1 justify-items-center mt-10 bg-[#C35A40] w-[83%] p-6 rounded-2xl">
-            <h1 className="flex flex-col justify-center items-center leading-none text-[95px] mb-1">
+            <h1 className="flex flex-col justify-center items-center leading-none text-[90px] mb-1 mobile:text-[75px]">
                 CALCULOS
             </h1>
             <Image 

@@ -14,11 +14,11 @@ export default function TopOfPage() {
       </div>    
 
       <div className=" w-[55%] p-1 flex flex-col justify-center items-center mobile:w-[100%] mobile:p-3 mobile:order-2">
-        <div className="grid grid-rows-1 justify-items-center w-[85%] ml-9 mobile:ml-0 mobile:order-2">
-          <h1 className="text-[87.5px] text-justify leading-none w-[100%] mb-8 mobile:text-[70px] mobile:text-center">
+        <div className="grid grid-rows-1 justify-items-center w-[85%] ml-9 mobile:ml-0 mobile:order-2 mobile:w-[98%]">
+          <h1 className="text-[87.5px] text-justify leading-none w-[97%] mb-8 mobile:text-[56px] mobile:text-center">
               Duvidas sobre os gastos de consumo do seu veiculo?
           </h1>
-          <h5 className="w-[100%] text-justify text-light leading-none text-[21px] mobile:text-[14px] mobile:w-[90%] font-k2d">
+          <h5 className="w-[100%] text-justify text-light leading-none text-[21px] mobile:text-[16px] mobile:w-[85%] font-k2d mobile:mb-6">
               Neste site você pode calcular os valores do consumo do seu veiculo, podendo 
               também gerar um relatório do consumo e dos valores de gasto. 
           </h5>
