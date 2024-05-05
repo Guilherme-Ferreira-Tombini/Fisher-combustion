@@ -32,12 +32,12 @@ export default function Calculate(){
           Toast.fire({
             icon: 'warning',
             background: '#b1533c',
+            html: '<div class="font-k2d text-[14px]">Ensira os dados nos campos</div>',
             customClass:{
                 popup: 'custom-popup-toast',
-                title: 'custom-title-toast'
+                title: 'custom-title-toast',
             },
             color: 'white',
-            title: 'Ensira os dados nos campos'
           });
             return;
         }else{
@@ -63,12 +63,13 @@ export default function Calculate(){
           Toast.fire({
             icon: 'success',
             background: '#b1533c',
+            html: '<div class="font-k2d text-[14px]">Relatório gerado com sucesso!!</div>',
             customClass:{
                 popup: 'custom-popup-toast',
-                title: 'custom-title-toast'
+                title: 'custom-title-toast',
+                
             },
             color: 'white',
-            title: 'Relatorio Gerado com sucesso!!'
           });
             return;
         }
@@ -97,12 +98,12 @@ export default function Calculate(){
       Toast.fire({
         icon: 'success',
         background: '#b1533c',
+        html: '<div class="font-k2d text-[14px]">Campos limpos com sucesso</div>',
         customClass:{
             popup: 'custom-popup-toast',
             title: 'custom-title-toast'
         },
         color: 'white',
-        title: 'Campos limpos com sucesso'
       });
       return;
     }
