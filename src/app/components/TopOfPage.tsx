@@ -18,7 +18,7 @@ export default function TopOfPage() {
           <h1 className=" text-[86.4px] text-justify leading-none w-[100%] mb-8 mobile:text-[70px] mobile:text-center">
               Duvidas sobre os gastos de consumo do seu veiculo?
           </h1>
-          <h5 className="w-[100%] text-justify leading-none text-[35px] mobile:text-[33px] mobile:w-[90%]">
+          <h5 className="w-[100%] text-justify leading-none text-[35px] mobile:text-[33px] mobile:w-[90%] font-k2d">
               Neste site você pode calcular os valores do consumo do seu veiculo, podendo 
               também gerar um relatório do consumo e dos valores de gasto. 
           </h5>

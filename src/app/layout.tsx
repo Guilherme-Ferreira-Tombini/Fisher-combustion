@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Jomhuria, Abel } from "next/font/google";
+import { Karantina, K2D } from "next/font/google";
 import "./globals.css";
 
-const jomhuria = Jomhuria({
+const karantina = Karantina({
   subsets: ["latin"],
   weight: "400"
 });
 
-const abel = Abel({
+const k2d = K2D({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-abel"
+  variable: "--font-K2D"
 })
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="text-white">
-      <body className={`${jomhuria.className} ${abel.variable}`}>{children}</body>
+      <body className={`${karantina.className} ${k2d.variable}`}>{children}</body>
     </html>
   );
 }

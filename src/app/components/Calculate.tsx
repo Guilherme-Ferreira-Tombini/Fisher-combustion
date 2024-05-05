@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-import SymbolForCalculations from "./SymbolForCalculations"
+import Image from "next/image";
 import Swal from "sweetalert2";
 import DataReport from "./DataReport";
 
@@ -110,25 +110,31 @@ export default function Calculate(){
     return(
       <>
         <div className="grid grid-cols-1 justify-items-center mt-10 bg-[#C35A40] w-[83%] p-6 rounded-2xl">
-            <h1 className="flex flex-col justify-center items-center leading-none text-[113px]">
+            <h1 className="flex flex-col justify-center items-center leading-none text-[95px] mb-1">
                 CALCULOS
             </h1>
-            <SymbolForCalculations/>
-            <div className="w-[70%] p-5 mt-2 font-abel grid grid-cols-1 justify-items-center">
+            <Image 
+              src={"/img/Symbol.png"} 
+              alt={"Symbol"}
+              width={56}
+              height={56}
+              quality={100}
+            />
+            <div className="w-[70%] p-5 font-k2d grid grid-cols-1 justify-items-center text-[17px]">
                <input 
-                 className="rounded-lg w-full text-center text-xl placeholder-[#4C4C4C] text-black p-1" 
+                 className="rounded-lg w-full text-center placeholder-[#4C4C4C] text-black p-1" 
                  type="text" value={quilometroPorLitro}
                  placeholder="Quantos KM seu veiculo anda com 1 litro de combustivel?"
                  onChange={(e) => setQuilometroPorLitro(e.target.value)}/>
 
                <input 
-                 className="rounded-lg w-full text-center text-xl placeholder-[#4C4C4C] text-black p-1 mt-5" 
+                 className="rounded-lg w-full text-center placeholder-[#4C4C4C] text-black p-1 mt-5" 
                  type="text" value={tanqueTotal} 
                  placeholder="Quantos litros o tanque de combustivel suporta de combustivel?"
                  onChange={(e) => setTanqueTotal(e.target.value)}/>
 
                <input 
-                 className="rounded-lg w-full text-center text-xl placeholder-[#4C4C4C] text-black p-1 mt-5" 
+                 className="rounded-lg w-full text-center placeholder-[#4C4C4C] text-black p-1 mt-5" 
                  type="text" value={combustivel} 
                  placeholder="Insira o preço do combusivel"
                  onChange={(e) => setCombustivel(e.target.value)}/>

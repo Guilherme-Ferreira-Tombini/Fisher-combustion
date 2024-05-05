@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        abel: ['var(--font-abel)'],
+        k2d: ["var(--font-K2D)"],
       },
       screens:{
         'mobile': {'max': '767px'},
