@@ -20,7 +20,7 @@ export default function DataReport(props:any){
                     </span>
 
                     <span className="mt-3">
-                        Seu veiculo está emitindo 0 de CO2 no ambiente, melhor dar uma olhada/está dentro do permitido
+                        {/* Seu veiculo está emitindo 0 de CO2 no ambiente, melhor dar uma olhada/está dentro do permitido */}
                     </span>
                 </div>
             </div>
