@@ -12,7 +12,7 @@ export default function DataReport(props:any){
                     </span>
 
                     <span className="text-justify leading-none mt-5">
-                        Em uma viagem de {(props.Distancia)? props.Distancia: "0"}km, seu carro vai abastecer:{" " + props.VezesAbastecido} vezes
+                        Em uma viagem de {(props.Distancia)? props.Distancia: "0"}km, seu carro vai abastecer: {(props.VezesAbastecido)? props.VezesAbastecido: "0"} vezes
                     </span>
                 
                     <span className="text-justify mt-5">

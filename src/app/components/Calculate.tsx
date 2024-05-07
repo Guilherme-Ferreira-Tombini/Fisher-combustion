@@ -49,7 +49,7 @@ export default function Calculate(){
           let gasto = campTCValue * campTTValue;
           setGasto_tanque_total(Math.floor(gasto));
 
-          let conta = 1000 / campKMLValue;
+          let conta = distancia_percorrer / campKMLValue;
           let vezesAbastecido = conta/campTTValue;
           setVezes_abastecido(Math.ceil(vezesAbastecido));
 
