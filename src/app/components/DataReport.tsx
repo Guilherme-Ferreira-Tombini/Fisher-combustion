@@ -6,17 +6,21 @@ export default function DataReport(props:any){
                 RELATÓRIO
             </h1>
             <div className="w-[90%] grid grid-cols-1 p-2">
-                <div className="flex flex-col justify-items-start text-[21px] font-k2d mobile:text-base">
-                    <span className="text-justify mt-1">
+                <div className="flex flex-col justify-items-start text-justify text-[21px] font-k2d mobile:text-base">
+                    <span className="mt-1">
                         Com o tanque cheio o carro percorre:{" " + props.KMLValue} KM
                     </span>
 
-                    <span className="text-justify leading-none mt-5">
+                    <span className="leading-none mt-5">
                         Em uma viagem de {(props.Distancia)? props.Distancia: "0"}km, seu carro vai abastecer: {(props.VezesAbastecido)? props.VezesAbastecido: "0"} vezes
                     </span>
                 
-                    <span className="text-justify mt-5">
+                    <span className="mt-5">
                         Gasto para encher o tanque do seu carro: {"R$ " + props.Gasto_tanque}
+                    </span>
+
+                    <span className="mt-3">
+                        Seu veiculo está emitindo 0 de CO2 no ambiente, melhor dar uma olhada/está dentro do permitido
                     </span>
                 </div>
             </div>
