@@ -14,6 +14,21 @@ export default function Calculate(){
     const [KM_percorre, setKM_percorre] = useState<number>(0.0);
     const [gasto_tanque_total, setGasto_tanque_total] = useState<number>(0.0);
     const [vezes_abastecido, setVezes_abastecido] = useState<number>(0);
+    const [resultCO2, setresultCO2] = useState<number>(0);
+
+    function func_CO2(combustivelUsado: string, campKMLValue: number){
+        let resultado;
+        if(combustivelUsado == "Gasolina"){
+            resultado = campKMLValue * 2.3;
+            setresultCO2(Math.ceil(resultado));
+        }else if(combustivelUsado == "Diesel"){
+            resultado = campKMLValue * 3.2;
+            setresultCO2(Math.ceil(resultado));
+        }else if(combustivelUsado == "Etanol"){
+            resultado = campKMLValue * 1.45;
+            setresultCO2(Math.ceil(resultado));
+        }
+    }
 
     function calculate() {
         let campKMLValue = parseFloat(quilometroPorLitro);
@@ -53,6 +68,8 @@ export default function Calculate(){
           let vezesAbastecido = conta/campTTValue;
           setVezes_abastecido(Math.ceil(vezesAbastecido));
 
+          func_CO2(combustivelUsado,campKMLValue);
+
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -79,7 +96,6 @@ export default function Calculate(){
         }
     }
 
-
     function clear(){
        setQuilometroPorLitro("");
        setTanqueTotal("");
@@ -90,6 +106,7 @@ export default function Calculate(){
        setVezes_abastecido(0);
        setKM_percorre(0);
        setGasto_tanque_total(0);
+       setresultCO2(0);
        
        const Toast = Swal.mixin({
         toast: true,
@@ -180,7 +197,13 @@ export default function Calculate(){
                   onClick={clear}/>
             </div>
         </div>
-        <DataReport KMLValue={KM_percorre} Distancia={distancia} VezesAbastecido={vezes_abastecido} Gasto_tanque={gasto_tanque_total}/>
+
+        <DataReport 
+            KMLValue={KM_percorre} 
+            Distancia={distancia} 
+            VezesAbastecido={vezes_abastecido} 
+            Gasto_tanque={gasto_tanque_total}
+            CO2={resultCO2}/>
     </>
     );
 }
