@@ -145,7 +145,7 @@ export default function Calculate(){
               height={56}
               quality={100}
             />
-            <div className="w-[70%] p-5 font-k2d grid grid-cols-1 justify-items-center text-[17px]">
+            <div className="w-[70%] p-5 font-k2d grid grid-cols-1 justify-items-center text-[17px] mobile:w-[100%] mobile:text-[13px]">
                <input 
                  className="rounded-lg w-full text-center placeholder-[#4C4C4C] text-black p-1" 
                  type="text" value={quilometroPorLitro}
@@ -171,7 +171,7 @@ export default function Calculate(){
                  onChange={(e) => setDistancia(e.target.value)}/>
 
                 <select
-                    className="rounded-lg w-[50%] text-center  text-[#4C4C4C] p-1 mt-5"
+                    className="rounded-lg w-[50%] text-center  text-[#4C4C4C] p-1 mt-5 mobile:w-[65%]"
                     value={combustivelUsado}
                     onChange={(e) => setCombustivelUsado(e.target.value)}>
                     <option value="">Selecione o tipo de combustível</option>
