@@ -21,15 +21,15 @@ export default function ChangeColor(){
         const botao = document.querySelectorAll(".hoverButton");
 
         if (header && body && topics && principal && content && footer && seta && botao) {
-            header.style.backgroundColor = checked ? '#252389': '#8E4837';
-            body.style.backgroundColor = checked ? '#181656':'#683529';
-            content.style.backgroundColor = checked ? '#252389':'#C35A40';
-            footer.style.backgroundColor = checked ? '#252389':'#8E4837';
-            seta.style.backgroundColor = checked ? '#181656': '#C35A40';
+            header.style.backgroundColor = checked ? '#613327': '#8E4837';
+            body.style.backgroundColor = checked ? '#321A15':'#683529';
+            content.style.backgroundColor = checked ? '#613327':'#C35A40';
+            footer.style.backgroundColor = checked ? '#613327':'#8E4837';
+            seta.style.backgroundColor = checked ? '#2C1712': '#C35A40';
             
-            changeColors(Array.from(botao), checked ? '#181656' : '#8F4330');
-            changeColors(Array.from(topics), checked ? '#252389' : '#C35A40');
-            changeColors(Array.from(principal), checked ? '#252389' : '#C35A40');
+            changeColors(Array.from(botao), checked ? '#2C1712' : '#8F4330');
+            changeColors(Array.from(topics), checked ? '#613327' : '#C35A40');
+            changeColors(Array.from(principal), checked ? '#613327' : '#C35A40');
         }
 
     }, [checked]);
