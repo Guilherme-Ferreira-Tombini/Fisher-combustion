@@ -20,7 +20,7 @@ export default function DataReport(props:any){
     }
 
     return(
-        <div className="bg-[#C35A40] rounded-3xl p-3 mt-16 w-[83%] grid grid-cols-1 justify-items-center">
+        <div className="bg-[#C35A40] rounded-3xl p-3 mt-16 w-[83%] grid grid-cols-1 justify-items-center principal">
             <h1 className="flex flex-col justify-center items-center leading-none text-[89px] mb-6 mobile:text-[75px]">
                 RELATÓRIO
             </h1>
@@ -44,8 +44,7 @@ export default function DataReport(props:any){
                 </div>
                 <div className="w-[100%] grid grid-cols-1 justify-items-center font-abel mt-9">
                     <input 
-                        className="bg-[#8F4330] text-white p-3 rounded-xl text-lg"
-                        id="hoverButton"
+                        className="bg-[#8F4330] text-white p-3 rounded-xl text-lg hoverButton"
                         type="button" 
                         value="Gerar PDF" 
                         onClick={GerarPDF}/>

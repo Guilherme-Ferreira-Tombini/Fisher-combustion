@@ -134,7 +134,7 @@ export default function Calculate(){
 
     return(
       <>
-        <div className="grid grid-cols-1 justify-items-center mt-10 bg-[#C35A40] w-[83%] p-6 rounded-2xl">
+        <div className="grid grid-cols-1 justify-items-center mt-10 bg-[#C35A40] w-[83%] p-6 rounded-2xl principal">
             <h1 className="flex flex-col justify-center items-center leading-none text-[90px] mb-1 mobile:text-[75px]">
                 CALCULOS
             </h1>
@@ -183,8 +183,7 @@ export default function Calculate(){
             </div>
             <div className="w-[250px] flex flex-row justify-between items-center mt-4 font-abel">
                 <input
-                  className="bg-[#8F4330] rounded-lg pr-3 pl-3 pt-3 pb-2  w-[110px] text-xl" 
-                  id="hoverButton"
+                  className="bg-[#8F4330] rounded-lg pr-3 pl-3 pt-3 pb-2  w-[110px] text-xl hoverButton" 
                   type="button" 
                   value="Calcular" 
                   onClick={calculate}/>

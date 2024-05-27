@@ -9,7 +9,7 @@ export default function ExplanatoryTopics(){
             <Topics 
               image={"/img/analise-de-dados 1.png"} 
               text={"Geração do relatório em formato PDF.\nOBS: O relatório com os dados não fica salvo no site."}/>
-            <Topics 
+            <Topics
               image={"/img/posto-de-gasolina 1.png"} 
               text={"Saiba de algumas coisas relacionadas ao consumo de seu veiculo e a quantidade de CO2 que libera no ambiente."}/>
         </div>
