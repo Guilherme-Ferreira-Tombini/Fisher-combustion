@@ -5,6 +5,15 @@ import {jsPDF} from 'jspdf';
 export default function DataReport(props:any){
     function GerarPDF() {
        let doc = new jsPDF();
+
+       let pageWidth = doc.internal.pageSize.getWidth();
+       let pageHeight = doc.internal.pageSize.getHeight();
+
+       doc.setFillColor(69, 34, 26);
+       doc.rect(0, 0, pageWidth, pageHeight, 'F');
+       doc.setFontSize(16);
+       doc.setTextColor(255, 255, 255);
+
        doc.text(`Com o tanque cheio o carro percorre:${" " + props.KMLValue} KM`, 10, 10);
        doc.text(`Em uma viagem de ${(props.Distancia)? props.Distancia: "0"}km, seu carro vai abastecer: ${(props.VezesAbastecido)? props.VezesAbastecido: "0"} vezes`,10,20);
        doc.text(`Gasto para encher o tanque do seu carro: ${"R$ " + props.Gasto_tanque}`, 10, 30);
