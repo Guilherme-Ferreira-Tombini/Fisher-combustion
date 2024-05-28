@@ -9,11 +9,55 @@ export default function DataReport(props:any){
         if (content) {
             html2canvas(content)
                 .then(canvas => {
-                    const imgData = canvas.toDataURL('image/png');
                     const pdf = new jsPDF();
-                    const imgWidth = pdf.internal.pageSize.getWidth();
-                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
-                    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+                    const pageWidth = pdf.internal.pageSize.getWidth();
+                    const pageHeight = pdf.internal.pageSize.getHeight();
+                    const canvasWidth = canvas.width;
+                    const canvasHeight = canvas.height;
+
+                    // Calcula a nova altura da imagem para manter a proporção
+                    const imgHeight = (canvasHeight * pageWidth) / canvasWidth;
+                    const position = 0;
+
+                    if (imgHeight > pageHeight) {
+                        // Divida a imagem em várias páginas
+                        let heightLeft = imgHeight;
+                        let y = position;
+
+                        while (heightLeft > 0) {
+                            const currentPageHeight = Math.min(heightLeft, pageHeight);
+                            const currentCanvas = document.createElement('canvas');
+                            currentCanvas.width = canvasWidth;
+                            currentCanvas.height = (canvasWidth * currentPageHeight) / pageWidth;
+
+                            const ctx = currentCanvas.getContext('2d');
+                            if (ctx) {
+                                ctx.drawImage(
+                                    canvas,
+                                    0,
+                                    canvas.height - heightLeft,
+                                    canvasWidth,
+                                    (canvasWidth * currentPageHeight) / pageWidth,
+                                    0,
+                                    0,
+                                    canvasWidth,
+                                    currentCanvas.height
+                                );
+                                
+                                const imgData = currentCanvas.toDataURL('image/png');
+                                pdf.addImage(imgData, 'PNG', 0, y, pageWidth, currentPageHeight);
+                                heightLeft -= currentPageHeight;
+                                if (heightLeft > 0) {
+                                    pdf.addPage();
+                                }
+                            }
+                        }
+                    } else {
+                        // Se a imagem couber em uma página
+                        const imgData = canvas.toDataURL('image/png');
+                        pdf.addImage(imgData, 'PNG', 0, 0, pageWidth, imgHeight);
+                    }
+
                     pdf.save('Relatorio.pdf');
                 });
         }
