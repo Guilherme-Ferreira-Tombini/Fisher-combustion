@@ -168,7 +168,12 @@ export default function Calculate(){
                  className="rounded-lg w-full text-center placeholder-[#4C4C4C] text-black p-1 mt-5" 
                  type="text" value={distancia} 
                  placeholder="Distancia a percorrer com o veiculo (KM)"
-                 onChange={(e) => setDistancia(e.target.value)}/>
+                 onChange={(e) => {
+                  const inputValor = e.target.value;
+                  if (/^\d*$/.test(inputValor)) { // Verifica se o valor é composto apenas de dígitos
+                      setDistancia(inputValor);
+                  }
+                 }}/>
 
                 <select
                     className="rounded-lg w-[50%] text-center  text-[#4C4C4C] p-1 mt-5 mobile:w-[65%]"
