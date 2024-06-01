@@ -9,6 +9,7 @@ export default function Calculate(){
     const [tanqueTotal, setTanqueTotal] = useState("");
     const [combustivel, setCombustivel] = useState("");
     const [distancia, setDistancia] = useState("");
+    const [distCerto, setDistCerto] = useState<number>(0.0);
     const [combustivelUsado, setCombustivelUsado] = useState("");
 
     const [KM_percorre, setKM_percorre] = useState<number>(0.0);
@@ -69,6 +70,7 @@ export default function Calculate(){
           setVezes_abastecido(Math.ceil(vezesAbastecido));
 
           func_CO2(combustivelUsado,campKMLValue);
+          setDistCerto(distancia_percorrer);
 
           const Toast = Swal.mixin({
             toast: true,
@@ -101,6 +103,7 @@ export default function Calculate(){
        setTanqueTotal("");
        setCombustivel("");
        setDistancia("");
+       setDistCerto(0);
        setCombustivelUsado("");
 
        setVezes_abastecido(0);
@@ -204,7 +207,7 @@ export default function Calculate(){
 
         <DataReport 
             KMLValue={KM_percorre} 
-            Distancia={distancia} 
+            Distancia={distCerto} 
             VezesAbastecido={vezes_abastecido} 
             Gasto_tanque={gasto_tanque_total}
             CO2={resultCO2}/>
