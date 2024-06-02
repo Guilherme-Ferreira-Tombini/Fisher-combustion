@@ -37,11 +37,11 @@ export default function DataReport(props:any){
                     </span>
                 
                     <span className="mt-5">
-                        Gasto para encher o tanque do seu carro: {"R$ " + props.Gasto_tanque}
+                        Gastos para cada vez que encher o tanque do seu carro: {"R$ " + props.Gasto_tanque}
                     </span>
 
                     <span className="mt-3">
-                        Seu veiculo está emitindo {props.CO2}kg de CO2 no ambiente.
+                        Seu veiculo está emitindo {props.CO2}kg de CO2 no ambiente, durante a viagem.
                     </span>
                 </div>
                 <div className="w-[100%] grid grid-cols-1 justify-items-center font-abel mt-9">

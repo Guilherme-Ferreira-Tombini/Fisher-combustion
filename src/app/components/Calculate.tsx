@@ -17,16 +17,16 @@ export default function Calculate(){
     const [vezes_abastecido, setVezes_abastecido] = useState<number>(0);
     const [resultCO2, setresultCO2] = useState<number>(0);
 
-    function func_CO2(combustivelUsado: string, campKMLValue: number){
+    function func_CO2(combustivelUsado: string, campKMLValue: number, vezes_abastecido:number, campTTValue:number){
         let resultado;
         if(combustivelUsado == "Gasolina"){
-            resultado = campKMLValue * 2.3;
+            resultado = (campTTValue*vezes_abastecido) * 2.3;
             setresultCO2(Math.ceil(resultado));
         }else if(combustivelUsado == "Diesel"){
-            resultado = campKMLValue * 3.2;
+            resultado = (campTTValue*vezes_abastecido) * 3.2;
             setresultCO2(Math.ceil(resultado));
         }else if(combustivelUsado == "Etanol"){
-            resultado = campKMLValue * 1.45;
+            resultado = (campTTValue*vezes_abastecido) * 1.45;
             setresultCO2(Math.ceil(resultado));
         }
     }
@@ -69,7 +69,7 @@ export default function Calculate(){
           let vezesAbastecido = conta/campTTValue;
           setVezes_abastecido(Math.ceil(vezesAbastecido));
 
-          func_CO2(combustivelUsado,campKMLValue);
+          func_CO2(combustivelUsado, campKMLValue, vezesAbastecido, campTTValue);
           setDistCerto(distancia_percorrer);
 
           const Toast = Swal.mixin({
