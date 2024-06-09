@@ -1,5 +1,6 @@
 "use client"
 import {jsPDF} from 'jspdf';
+import ToastMessage from './ToastMessage';
 
 
 export default function DataReport(props:any){
@@ -19,6 +20,11 @@ export default function DataReport(props:any){
        doc.text(`Gasto para encher o tanque do seu carro: ${"R$ " + props.Gasto_tanque}`, 10, 30);
        doc.text(`Seu veiculo está emitindo ${props.CO2}kg de CO2 no ambiente.`, 10, 40);
        doc.save('Relatório.pdf');
+
+       ToastMessage({ 
+        icone: 'success', 
+        text: 'Relátorio gerado com sucesso, verifique seus downloads!' 
+      });
     }
 
     return(

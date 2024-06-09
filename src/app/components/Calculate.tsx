@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from "react";
 import Image from "next/image";
-import Swal from "sweetalert2";
 import DataReport from "./DataReport";
+import ToastMessage from "./ToastMessage";
 
 export default function Calculate(){
     const [quilometroPorLitro, setQuilometroPorLitro] = useState("");
@@ -38,62 +38,27 @@ export default function Calculate(){
         let distancia_percorrer = parseFloat(distancia);
 
         if (isNaN(campKMLValue) || isNaN(campTTValue) ||  isNaN(campTCValue) || isNaN(distancia_percorrer) || combustivelUsado == "") {
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: 'warning',
-            background: '#b1533c',
-            html: '<div class="font-k2d text-[14px]">Ensira os dados nos campos</div>',
-            customClass:{
-                popup: 'custom-popup-toast',
-                title: 'custom-title-toast',
-            },
-            color: 'white',
-          });
+            ToastMessage({ 
+              icone: 'warning', 
+              text: 'Insira os dados nos campos!' 
+            });
             return;
         }else{
-          setKM_percorre(Math.round(campTTValue * campKMLValue));
-          let gasto = campTCValue * campTTValue;
-          setGasto_tanque_total(Math.floor(gasto));
+            setKM_percorre(Math.round(campTTValue * campKMLValue));
+            let gasto = campTCValue * campTTValue;
+            setGasto_tanque_total(Math.floor(gasto));
 
-          let conta = distancia_percorrer / campKMLValue;
-          let vezesAbastecido = conta/campTTValue;
-          setVezes_abastecido(Math.ceil(vezesAbastecido));
+            let conta = distancia_percorrer / campKMLValue;
+            let vezesAbastecido = conta/campTTValue;
+            setVezes_abastecido(Math.ceil(vezesAbastecido));
 
-          func_CO2(combustivelUsado, campKMLValue, vezesAbastecido, campTTValue);
-          setDistCerto(distancia_percorrer);
+            func_CO2(combustivelUsado, campKMLValue, vezesAbastecido, campTTValue);
+            setDistCerto(distancia_percorrer);
 
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: 'success',
-            background: '#b1533c',
-            html: '<div class="font-k2d text-[14px]">Relatório gerado com sucesso!!</div>',
-            customClass:{
-                popup: 'custom-popup-toast',
-                title: 'custom-title-toast',
-                
-            },
-            color: 'white',
-          });
+            ToastMessage({ 
+              icone: 'success', 
+              text: 'Calculos realizados com sucesso!' 
+            });
             return;
         }
     }
@@ -111,28 +76,11 @@ export default function Calculate(){
        setGasto_tanque_total(0);
        setresultCO2(0);
        
-       const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        }
-      });
-      Toast.fire({
-        icon: 'success',
-        background: '#b1533c',
-        html: '<div class="font-k2d text-[14px]">Campos limpos com sucesso</div>',
-        customClass:{
-            popup: 'custom-popup-toast',
-            title: 'custom-title-toast'
-        },
-        color: 'white',
-      });
-      return;
+       ToastMessage({ 
+         icone: 'success', 
+         text: 'Campos limpos com sucesso!' 
+       });
+       return;
     }
 
     return(
