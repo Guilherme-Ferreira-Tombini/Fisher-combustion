@@ -15,10 +15,13 @@ export default function DataReport(props:any){
        doc.setFontSize(16);
        doc.setTextColor(255, 255, 255);
 
+       const data = new Date(); 
+
        doc.text(`Com o tanque cheio o carro percorre:${" " + props.KMLValue} KM`, 10, 10);
        doc.text(`Em uma viagem de ${(props.Distancia)? props.Distancia: "0"}km, seu carro vai abastecer: ${(props.VezesAbastecido)? props.VezesAbastecido: "0"} vezes`,10,20);
        doc.text(`Gasto para encher o tanque do seu carro: ${"R$ " + props.Gasto_tanque}`, 10, 30);
        doc.text(`Seu veiculo está emitindo ${props.CO2}kg de CO2 no ambiente.`, 10, 40);
+       doc.text(`Relátorio gerado as ${data.getHours() + ':' + data.getMinutes()}, dia ${data.getDate()+'/'+`${data.getMonth()+1}`+'/'+data.getFullYear()}`,50,70);
        doc.save('Relatório.pdf');
 
        ToastMessage({ 
