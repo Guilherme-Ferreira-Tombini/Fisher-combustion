@@ -18,15 +18,14 @@ export default function Calculate(){
     const [resultCO2, setresultCO2] = useState<number>(0);
 
     function func_CO2(combustivelUsado: string, campKMLValue: number, vezes_abastecido:number, campTTValue:number){
-        let resultado;
-        if(combustivelUsado == "Gasolina"){
-            resultado = (campTTValue*vezes_abastecido) * 2.3;
-            setresultCO2(Math.ceil(resultado));
-        }else if(combustivelUsado == "Diesel"){
-            resultado = (campTTValue*vezes_abastecido) * 3.2;
-            setresultCO2(Math.ceil(resultado));
-        }else if(combustivelUsado == "Etanol"){
-            resultado = (campTTValue*vezes_abastecido) * 1.45;
+        const fatoresEmissao:{ [key: string]: number } = {
+          "Gasolina": 2.3,
+          "Diesel": 3.2,
+          "Etanol": 1.45
+        };
+    
+        if(combustivelUsado in fatoresEmissao) {
+            const resultado = (campTTValue * vezes_abastecido) * fatoresEmissao[combustivelUsado];
             setresultCO2(Math.ceil(resultado));
         }
     }
